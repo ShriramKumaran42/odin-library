@@ -45,3 +45,79 @@ h3{
     color: aliceblue;
 }
 
+#addDialog{
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 80%;
+    text-align: left;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1000;
+    background-color: aliceblue;
+}
+
+.dialog-button{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog-button button{
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+#confirmBtn{
+    border: none;
+    border-radius: 15px;
+    height: 20;
+    width: 40px;
+    font-weight: 600;
+    font-size: large;
+    box-shadow: 5px 5px 16px gray;
+    background-color: azure;
+}
+#confirmBtn:hover{
+    background-color: brown;
+    color: azure;
+}
+
+#cancel{
+    border: none;
+    border-radius: 15px;
+    height: 20;
+    width: 90px;
+    font-weight: 600;
+    font-size: large;
+    box-shadow: 5px 5px 16px gray;
+    background-color: azure;
+}
+#cancel:hover{
+    background-color: brown;
+    color: azure;
+}
+input{
+    border: none;
+    background-color: rgba(247, 115, 115, 0.2);
+    border-radius: 5px;
+    height: 25px;
+    width: 125px;
+}
+#pages{
+    width: 50px;
+}
+#read{
+    height: 15px;
+    width: 25px;
+}
+
+#dialog::backdrop{
+    background: rgba(0, 0, 0, );
+}
+

@@ -16,14 +16,15 @@
             <div class="adder">
                 <h3>Add a new book</h3>
                 <div>
-                    <button id="showDialog" class="btn">+</button>
+                    <button id="showDialog" class="btn" aria-label="Add a New Book">+</button>
                 </div>
                 <output>
 
                 </output>
             </div>
-            <dialog id="addDialog">
+            <dialog id="addDialog" role="dialog" aria-label="dialog-title">
                 <form>
+                    <h2 id="dialog-title">Add a new Book</h2>
                     <label for="title">
                         Name of the book : 
                     </label>
@@ -41,8 +42,10 @@
                         Have you read : 
                         <input type="checkbox" name="read" id="read">
                     </label>
-                    <button value="cancel" formmethod="dialog" class="cancel">Cancel</button>
-                    <button id="confirmBtn" value="default">Add</button>
+                    <div class="dialog-button">
+                        <button value="cancel" formmethod="dialog" class="cancel" id="cancel">Cancel</button>
+                        <button id="confirmBtn" value="default">+</button>
+                    </div>
                 </form>
             </dialog>
         </div>
