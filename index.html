@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -18,21 +18,30 @@
                 <div>
                     <button id="showDialog" class="btn">+</button>
                 </div>
-                <output></output>
+                <output>
+
+                </output>
             </div>
             <dialog id="addDialog">
                 <form>
-                    Name of the book : <input type="text" id="bookTitle"><br><br>
-                    Author of the book : <input type="text" id="bookAuthor"><br><br>
-                    No of pages : <input type="number" id="bookPgs"><br><br>
-                    <label for="finOrNot">
-                        Have you read : 
-                        <select name="finOrNot" id="finOrNot">
-                            <option value="read">Read</option>
-                            <option value="Not Read"> Not Read</option>
-                        </select>
+                    <label for="title">
+                        Name of the book : 
                     </label>
-                    <button value="cancel" formmethod="dialog">Cancel</button>
+                    <input type="text" id="title" name="title" required><br><br>
+                    <label for="author">
+                        Author of the book : 
+                    </label>
+                    <input type="text" id="author" name="author" required><br><br>
+
+                    <label for="pages">
+                        No of pages : 
+                    </label>
+                    <input type="number" id="pages" name="pages" required><br><br>
+                    <label for="read">
+                        Have you read : 
+                        <input type="checkbox" name="read" id="read">
+                    </label>
+                    <button value="cancel" formmethod="dialog" class="cancel">Cancel</button>
                     <button id="confirmBtn" value="default">Add</button>
                 </form>
             </dialog>
