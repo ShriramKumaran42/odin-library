@@ -1,3 +1,4 @@
+const { isValid } = require("rsuite/esm/utils/dateUtils");
 
 
 
@@ -113,6 +114,126 @@ function addBookViewer(newBook){
 // })
 
 // console.table(myLibrary);
+
+
+//------------VALIDATIONS------------------//
+
+const form = document.querySelector("form");
+const bookName = document.getElementById("name Error");
+const author = document.getElementById("author Error");
+const pages = document.getElementById("pages Error");
+const bookError = document.getElementById("name-error");
+const authorError = document.getElementById("author-error");
+const pagesError = document.getElementById("pages-error");
+
+const isValidName = () => {
+    const nameValidity = bookName.value.length !== 0;
+    return nameValidity;
+}
+
+const isValidAuthor = () => {
+    const authorValidity = author.value.length !== 0;
+    return authorValidity;
+}
+
+const isValidPages = () => {
+    const pagesValidity = pages.value.length !== 0;
+    return pagesValidity;
+}
+
+const setNameClass = (isValid) => {
+    bookName.className = isValid ? "valid" : "invalid";
+}
+
+const setAuthorClass = (isValid) => {
+    author.className = isValid ? "valid" : "invalid";
+}
+
+const setPagesClass = (isValid) => {
+    pages.className = isValid ? "valid" : "invalid";
+}
+
+const updateBookError = (isValidName) => {
+    if (isValidName) {
+        bookError.textContent = "";
+        bookError.removeAttribute("class");
+    }
+    else {
+        bookError.textContent = "Book Name Required";
+        bookError.setAttribute("class", "active");
+    }
+}
+
+const updateAuthorError = (isValidAuthor) => {
+    if (isValidAuthor) {
+        authorError.textContent = "";
+        authorError.removeAttribute("class");
+    }
+    else {
+        authorError.textContent = "Author Name Required";
+        authorError.setAttribute("class", "active")
+    }
+}
+
+const updatePagesError = (isValidPages) => {
+    if (isValidPages) {
+        pagesError.textContent = "";
+        pagesError.removeAttribute("class");
+    }
+    else {
+        pagesError.textContent = "No of Pages Read Required";
+        pagesError.setAttribute("class", "active");
+    }
+}
+
+const initializeValidation = () => {
+    const nameInput = isValidName();
+    setNameClass(nameInput);
+    
+    const authorInput = isValidAuthor();
+    setAuthorClass(authorInput);
+
+    const pagesInput = isValidPages();
+    setPagesClass(pagesInput);
+}
+
+const handleInput = () => {
+    const nameInput = isValidName();
+    setValidClass(nameInput);
+    updateBookError(nameInput);
+
+    const authorInput = isValidAuthor();
+    setAuthorClass(authorInput);
+    updateAuthorError(authorInput);
+
+    const pagesInput = isValidPages();
+    setPagesClass(pagesInput);
+    updatePagesError(pagesInput);
+}
+
+const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setValidClass(nameInput);
+    updateBookError(nameInput);
+    
+    setAuthorClass(authorInput);
+    updateAuthorError(authorInput);
+    
+    setPagesClass(pagesInput);
+    updatePagesError(pagesInput);
+
+}
+
+showBtn.addEventListener("click", () => {
+    initializeValidation();
+})
+
+bookName.addEventListener("input", handleInput);
+author.addEventListener("input", handleInput);
+pages.addEventListener("input", handleInput);
+
+form.addEventListener("submit", handleSubmit)
 
 
 

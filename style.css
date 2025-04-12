@@ -50,18 +50,43 @@ h3{
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 600px;
     max-width: 80%;
     text-align: left;
-
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     z-index: 1000;
     background-color: aliceblue;
 }
+
+#dialog-title{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+form label{
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+#title{
+    max-width: 50px;
+    min-width: 200px;
+}
+#author{
+    max-width: 50px;
+    min-width: 187px;
+}
+
+#pages::-webkit-outer-spin-button,
+#pages::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 
 .dialog-button{
     margin-top: 15px;
@@ -102,13 +127,13 @@ h3{
     background-color: brown;
     color: azure;
 }
-input{
+/* input{
     border: none;
     background-color: rgba(247, 115, 115, 0.2);
     border-radius: 5px;
     height: 25px;
     width: 125px;
-}
+} */
 #pages{
     width: 50px;
 }
@@ -121,3 +146,42 @@ input{
     background: rgba(0, 0, 0, );
 }
 
+/* Validation */
+
+p * {
+    display: block;
+}
+
+input {
+    appearance: none;
+    width: 100%;
+    border: 1px solid #333;
+    margin: 0;
+    border-radius: 5px;
+    height: 25px;
+
+    font-family: inherit;
+    font-size: 90%;
+
+    box-sizing: border-box;
+}
+
+input.invalid{
+    border: 2px solid #900;
+    background-color: #fdd;
+}
+
+input:focus.invalid {
+    outline: none;
+    border-style: dashed;
+}
+
+#name-error, #author-error, #pages-error {
+    width: 100%;
+    font-size: 80%;
+    color: #900;
+}
+
+.active{
+    padding: 0.3rem;
+}
