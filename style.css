@@ -152,7 +152,8 @@ p * {
     display: block;
 }
 
-input {
+input[type="text"],
+input[type="number"] {
     appearance: none;
     width: 100%;
     border: 1px solid #333;
@@ -164,6 +165,14 @@ input {
     font-size: 90%;
 
     box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    appearance: auto;
+    width: auto;
+    height: auto;
+    margin-right: 0.5rem;
+    cursor: pointer;
 }
 
 input.invalid{
